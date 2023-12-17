@@ -30,7 +30,7 @@ function ScreenForm({ person: initialPerson, onScreen }: ScreenFormProps) {
 
   const handleChange = (event: any) => {
     const { name, value, maxLength } = event.target;
-    let updatedValue = value;
+    const updatedValue = value;
     const change = {
       [name]: name === "dob" ? updatedValue.slice(0, maxLength) : updatedValue,
     };
@@ -59,7 +59,8 @@ function ScreenForm({ person: initialPerson, onScreen }: ScreenFormProps) {
 
   return (
     <form className="input-group vertical" onSubmit={handleSubmit}>
-      <label htmlFor="name">Full Name</label>
+      <h1>SDN Screen</h1>
+      <label id="name">Full Name</label>
       <input
         type="text"
         name="name"
@@ -73,7 +74,7 @@ function ScreenForm({ person: initialPerson, onScreen }: ScreenFormProps) {
         </div>
       )}
 
-      <label htmlFor="country">Country</label>
+      <label id="country">Country</label>
       <input
         type="text"
         name="country"
@@ -86,7 +87,7 @@ function ScreenForm({ person: initialPerson, onScreen }: ScreenFormProps) {
           <p>{errors.country}</p>
         </div>
       )}
-      <label htmlFor="dob">Birth Year</label>
+      <label id="dob">Birth Year</label>
       <input
         type="number"
         name="dob"

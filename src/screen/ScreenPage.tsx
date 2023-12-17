@@ -32,21 +32,21 @@ function ScreenPage() {
       }
     });
 
-    const search = (word: any, person: Person) => {
+    const search = (key: any, person: Person) => {
       const nameMatch =
-        Object.values(word).find((obj: any) => {
+        Object.values(key).find((obj: any) => {
           return obj.fullName?.includes(person.name);
         }) != undefined;
 
       const countryMatch =
-        Object.values(word).find((obj: any) => {
+        Object.values(key).find((obj: any) => {
           return obj.addresses?.find((address: any) => {
             return address?.country == person.country;
           });
         }) != undefined;
 
       const dobMatch =
-        Object.values(word).find((obj: any) => {
+        Object.values(key).find((obj: any) => {
           return obj.dob?.includes(person?.dob);
         }) != undefined;
       return { nameMatch, countryMatch, dobMatch };
@@ -60,7 +60,6 @@ function ScreenPage() {
 
   return (
     <>
-      <h1>SDN Screen</h1>
       <ScreenForm onScreen={screenPerson} person={initialPerson} />
       {hasSearched && <ScreenResult screen={screenResult} />}
     </>
