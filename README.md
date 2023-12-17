@@ -6,8 +6,8 @@ SDN Screen takes in a person's full name, country, and year of birth and runs a 
 
 Possible results:
 
-- Hit - if there are any matches in the SDN list
-- Clear - if no matches in the SDN list
+- Hit - displays if there any matches to full name, country, and date of birth in the SDN list
+- Clear - displays if there are no matches in the SDN list
 
 ## How To Use
 
